@@ -9,7 +9,7 @@ import HelloWorld from "./components/HelloWorld.vue";
     <img
       alt="Gigachad"
       class="logo"
-      src="@/assets/logo2.png"
+      src="@/assets/logo.png"
       width="128"
       height="128"
     />
