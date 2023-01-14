@@ -34,7 +34,6 @@ export default defineComponent({
     <div class="message-list">
       <MessageList :messages="messages" />
     </div>
-    <hr />
     <div>
       <ChatInput />
     </div>
@@ -43,11 +42,14 @@ export default defineComponent({
 
 <style>
 .chat {
-  border: 1px solid white;
-  width: auto;
-  height: 100%;
+    width: 100%;
+    height: calc(100vh - 4%);
+    padding: 10% 0;
 }
 .message-list {
-    overflow: scroll;
+    overflow-y: scroll;
+    height: auto;
+    max-height: 100%;
+    padding: 1em 0;
 }
 </style>
