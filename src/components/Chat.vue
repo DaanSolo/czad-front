@@ -20,7 +20,6 @@ export default defineComponent({
     },
     scrollList() {
       this.$refs.list.scrollTo(0, this.$refs.list.scrollHeight);
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   mounted() {
@@ -31,7 +30,7 @@ export default defineComponent({
     });
   },
   created() {
-    this.socket = io("http://localhost:5173", { path: "/api/socket.io" });
+    this.socket = io("/", { path: "/api/socket.io" });
   },
 });
 </script>
