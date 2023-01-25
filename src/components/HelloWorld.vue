@@ -1,13 +1,22 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string;
-}>();
+<script lang="ts">
+import { mapState } from 'pinia'
+import {useUserStore} from "../store";
+
+export default {
+  computed: {
+    ...mapState(useUserStore, ['user', 'isLoggedIn'])
+  }
+}
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="purple">{{ msg }}</h1>
+    <h1 class="purple">You did it!</h1>
     <h3>Connecting you to the world, one chat at a time.</h3>
+    <div v-if="!isLoggedIn">
+      {{ user.username }}
+    </div>
+
   </div>
 </template>
 
