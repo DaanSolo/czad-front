@@ -42,10 +42,14 @@ export default defineComponent({
     <div>
       <ChatInput />
     </div>
+    <div class="box">
+      <button type="button">Ustawienia</button>
+      <button type="button">Wyloguj się</button>
+    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 .chat {
   width: 100%;
   height: calc(100vh - 4%);
@@ -55,5 +59,39 @@ export default defineComponent({
   overflow-y: scroll;
   max-height: 100%;
   padding: 1em 0;
+}
+.box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 15px;
+  width: fit-content;
+  float: right;
+}
+button {
+  background: #5a5858;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 4px 10px;
+}
+button:hover {
+  background: #5f4c85;
+}
+button:nth-child(2) {
+  background: #ccc;
+  color: #5934a2;
+  border: 0;
+  outline: 0;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 4px 10px;
+}
+button:nth-child(2):hover {
+  background: #7e6aa7 !important;
+  color: #fff;
 }
 </style>

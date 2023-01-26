@@ -10,13 +10,27 @@ export default {
 </script>
 
 <template>
+  <img
+    v-if="!isLoggedIn"
+    alt="Gigachad"
+    class="logo"
+    src="@/assets/logo2.png"
+    width="128"
+    height="128"
+  />   
+  <img
+    v-if="isLoggedIn"
+    alt="Gigachad"
+    class="logo"
+    src="@/assets/logo.png"
+    width="128"
+    height="128"
+  />  
   <div class="greetings">
-    <h1 class="purple">You did it!</h1>
-    <h3>Connecting you to the world, one chat at a time.</h3>
-    <div v-if="!isLoggedIn">
-      {{ user.username }}
-    </div>
-
+    <h1 class="purple" v-if="isLoggedIn">You did it, {{ user.username }}!</h1>
+    <h1 class="purple" v-if="!isLoggedIn">Please, log in!</h1>
+    <h3 v-if="isLoggedIn">Connecting you to the world, one chat at a time.</h3>
+    <h3 v-if="!isLoggedIn">Connect with like-minded individuals.</h3>
   </div>
 </template>
 
@@ -34,6 +48,10 @@ h3 {
 .greetings h1,
 .greetings h3 {
   text-align: center;
+}
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
 }
 
 @media (min-width: 1024px) {

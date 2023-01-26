@@ -6,14 +6,6 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <header>
-    <img
-      alt="Gigachad"
-      class="logo"
-      src="@/assets/logo.png"
-      width="128"
-      height="128"
-    />
-
     <div class="wrapper">
       <HelloWorld />
     </div>
