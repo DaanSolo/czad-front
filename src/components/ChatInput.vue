@@ -17,8 +17,7 @@ export default defineComponent({
   },
   methods: {
     submitMessage() {
-      const username = sessionStorage.getItem("username");
-      const payload = JSON.stringify({ username, content: this.content });
+      const payload = JSON.stringify({ content: this.content });
       fetch("/api/message", {
         method: "POST",
         headers: {

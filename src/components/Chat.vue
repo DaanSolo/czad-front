@@ -3,6 +3,7 @@ import { defineComponent } from "vue";
 import ChatInput from "./ChatInput.vue";
 import MessageList from "./MessageList.vue";
 import io from "socket.io-client";
+import { useUserStore } from "../store";
 
 export default defineComponent({
   components: { ChatInput, MessageList },
@@ -21,6 +22,15 @@ export default defineComponent({
     scrollList() {
       this.$refs.list.scrollTo(0, this.$refs.list.scrollHeight);
     },
+    logout() {
+      const store = useUserStore();
+      store.$patch({
+        isLoggedIn: false,
+        user: { id: undefined },
+      });
+      document.cookie = "";
+      this.$router.replace("/login");
+    }
   },
   mounted() {
     this.updateData();
@@ -42,8 +52,7 @@ export default defineComponent({
     <div>
       <ChatInput />
     </div>
-    <div class="box">
-      <button type="button">Ustawienia</button>
+    <div class="box" @click="logout">
       <button type="button">Wyloguj się</button>
     </div>
   </div>
@@ -61,7 +70,7 @@ export default defineComponent({
   padding: 1em 0;
 }
 .box {
-  display: grid;
+  display: block;
   grid-template-columns: 1fr 1fr;
   margin-top: 15px;
   width: fit-content;

@@ -64,7 +64,6 @@ nav a:first-of-type {
   header .wrapper {
     display: flex;
     place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   nav {

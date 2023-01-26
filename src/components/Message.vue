@@ -10,7 +10,7 @@ export default defineComponent({
 
 <template>
   <div class="chat-message">
-    <div class="username" ><span class="at">@</span>{{ message.username }}<span class="tooltip">{{ message.firstname }} {{ message.lastname }}Test</span></div>
+    <div class="username" ><span class="at">@</span>{{ message.user.username }}<span class="tooltip">{{ message.user.firstName }} {{ message.user.lastName }}</span></div>
     <div class="content">{{ message.content }}</div>
   </div>
 </template>
